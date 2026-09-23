@@ -2963,6 +2963,79 @@ body { padding-left: 240px !important; }
     </div>
 </div>
 
+     </div>
+    <div class="chat-container">
+    <div class="scroll-pillar pillar-left"></div>
+    <div class="scroll-pillar pillar-right"></div>
+
+    <div class="chat-title-wrapper">
+        <span class="bouncing-letter">💬</span> <span class="bouncing-letter">ប្រ</span><span class="bouncing-letter">អ</span><span class="bouncing-letter">ប់</span><span class="bouncing-letter">ឆា</span><span class="bouncing-letter">ត</span>
+    </div>
+        
+        <div class="chat-title-wrapper">
+    <span class="bouncing-text">ផ្ការីកស្គុសស្គាយប្រកូកប្រកាសប្រាប់ថា ភ្ជុំបិណ្ឌមកដល់ហើយ... ពេលវេលានៃការនឹកនាដល់ជីដូនជីតា ឪពុកម្តាយ និងញាតិការទាំងប្រាំសន្លឹកដែលបានចែកឋានទៅ។ សូមបុណ្យកុសលដែលកូនចៅបានឧទ្ទិសជូន ជួយទ្រទ្រង់ដួងវិញ្ញាណក្ខន្ធឱ្យបានទៅសោយសុខក្នុងសុគតិភពកុំបីឃ្លៀងឃ្លាតឡើយ។</span>
+</div>
+             <div id="step-1" style="text-align: center; padding: 50px 0;">
+        <button onclick="toStep2()" style="background: #4CAF50; color: white; border: none; padding: 15px 35px; border-radius: 12px; font-size: 1.2rem; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">🚀 ចុចចូលលេងឆាត</button>
+    </div>
+    <div id="step-2" style="display: none; padding: 20px; background: white; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+    <h3 style="text-align: center; color: #d32f2f;">🔒 ផ្ទៀងផ្ទាត់គណនី Gmail</h3>
+    
+    <button onclick="loginWithGoogle()" style="width:100%; background:#db4437; color:white; border:none; padding:15px; border-radius:8px; cursor:pointer; font-weight:bold; margin-bottom:15px;">
+        🔴 ចុច Login ជាមួយ Gmail ពិតប្រាកដ ទើបអាចលេងបាន សូមចុចពីលើបូតុងក្រហមយើងនេះ
+    </button>
+
+    <div style="text-align: left; margin-bottom: 10px;">
+        <label>👤 ឈ្មោះហៅក្រៅ៖</label>
+        <input type="text" id="reg-name" placeholder="វាយឈ្មោះរបស់អ្នក..." style="width:100%; padding:12px; margin-top:5px; border:1px solid #ccc; border-radius:8px;">
+    </div>
+
+    <div style="text-align: left; margin-bottom: 10px;">
+        <label>📞 លេខទូរស័ព្ទពិតប្រាកដ៖</label>
+        <input type="tel" id="reg-phone" 
+               placeholder="ឧទាហរណ៍៖ 012345678" 
+               oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+               maxlength="10"
+               style="width:100%; padding:12px; margin-top:5px; border:1px solid #ccc; border-radius:8px;">
+    </div>
+
+    <div style="text-align: left; margin-bottom: 15px;">
+        <label>📧 Gmail (ផ្ទៀងផ្ទាត់រួច)៖</label>
+        <input type="email" id="reg-email" placeholder="នឹងបង្ហាញក្រោយ Login រួចរាល់..." style="width:100%; padding:12px; margin-top:5px; border:1px solid #ddd; border-radius:8px; background: #f0f0f0;" readonly>
+    </div>
+    
+    <button onclick="getExactLocation()" id="btn-gps" style="width:100%; background:#2196F3; color:white; border:none; padding:12px; border-radius:8px; cursor:pointer; font-weight:bold;">📍 ចុចផ្តល់ទីតាំងពិត (GPS)</button>
+    <p id="gps-status" style="font-size: 0.8rem; color: red; text-align: center; margin-top: 8px;">ចាំបាច់ត្រូវមានទីតាំង</p>
+    
+    <button onclick="finalSubmit(event)" style="width:100%; background:#4CAF50; color:white; border:none; padding:15px; border-radius:8px; margin-top:15px; font-size: 1.1rem; font-weight:bold;">✅ យល់ព្រមចូលលេងឆាត</button>
+</div>
+        
+    <div id="step-3" style="display: none;">
+        <div id="chat-box" style="height: 350px; overflow-y: auto; background: white; padding: 10px; border-bottom: 1px solid #eee;"></div>
+
+        <div class="chat-input-area">
+    <input type="text" id="chat-user-input" placeholder="ឈ្មោះ..." maxlength="12" readonly style="background: #e9e9e9; cursor: not-allowed; font-weight: bold; color: #555;">
+    
+    <label for="img-upload" style="font-size: 1.5rem; cursor: pointer;">🖼️</label>
+    <input type="file" id="img-upload" accept="image/*" style="display:none" onchange="sendChatImage(this)">
+    
+    <input type="text" id="chat-msg-input" placeholder="ផ្ញើសារ..." maxlength="150" onkeypress="if(event.key==='Enter') sendChatMessage()">
+    <button class="btn-chat-send" onclick="sendChatMessage()">ផ្ញើ</button>
+</div>
+
+                <div style="text-align: left; margin-top: 10px;">
+            <span style="font-size: 0.8rem; color: gray;">Admin Code:</span>
+            <input type="password" id="admin-code" style="width: 80px; font-size: 0.7rem;">
+            <button class="btn-chat-send" style="background: #ff4d4d; margin-left: 5px;" onclick="clearAllChat()">លុបសារ</button>
+                
+        </div>
+    </div>
+</div
+
+
+
+            
+
           
 
 <div class="monetization-wrapper">
